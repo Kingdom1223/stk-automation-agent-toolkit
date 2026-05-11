@@ -1,0 +1,48 @@
+{
+  "scenario_name": "UAV_B1_L1_5Groups_ExternalEphem",
+  "output_dir": "stk_uav_outputs",
+  "show_stk": true,
+  "overwrite_current_scenario": true,
+  "start_utc": "2026-05-09T04:00:00Z",
+  "sample_step_s": 1.0,
+  "frequencies_hz": {
+    "B1": 1561098000.0,
+    "L1": 1575420000.0
+  },
+  "groups": [
+    {
+      "id": "G01",
+      "trajectory_type": "baseline_arc",
+      "uav_name": "UAV_G01",
+      "ground_station_name": "Radiator_G01",
+      "altitude_m": 7500.0,
+      "start_speed_kmh": 700.0,
+      "stop_speed_kmh": 800.0,
+      "start_lat_deg": 39.83,
+      "start_lon_deg": 116.22,
+      "stop_lat_deg": 39.97,
+      "stop_lon_deg": 116.62,
+      "cross_track_m": 900.0,
+      "radiator_lat_deg": 39.9,
+      "radiator_lon_deg": 116.39,
+      "radiator_altitude_m": 50.0
+    },
+    {
+      "id": "G02",
+      "trajectory_type": "s_curve",
+      "uav_name": "UAV_G02",
+      "ground_station_name": "Radiator_G02",
+      "altitude_m": 7200.0,
+      "start_speed_kmh": 720.0,
+      "stop_speed_kmh": 790.0,
+      "start_lat_deg": 31.09,
+      "start_lon_deg": 121.18,
+      "stop_lat_deg": 31.39,
+      "stop_lon_deg": 121.78,
+      "cross_track_m": 1800.0,
+      "radiator_lat_deg": 31.23,
+      "radiator_lon_deg": 121.47,
+      "radiator_altitude_m": 30.0
+    }
+  ]
+}
