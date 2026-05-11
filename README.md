@@ -33,6 +33,8 @@ stk-automation-agent-toolkit/
 │     └─ scripts/
 │        ├─ install_stk_mcp.ps1
 │        └─ stkMCP/
+├─ stk-automation/
+│  └─ SKILL.md
 └─ stkMCP/
    ├─ pyproject.toml
    ├─ README.md
@@ -44,6 +46,8 @@ The MCP package is included twice intentionally:
 
 - `stkMCP/`: standalone MCP package.
 - `skills/stk-automation/scripts/stkMCP/`: bundled MCP package that travels with the skill when installed into another agent.
+
+The root-level `stk-automation/` folder is a CC Switch compatibility mirror. Some skill managers scan top-level folders for `SKILL.md`; this mirror lets them recognize the skill without a custom subdirectory setting.
 
 ### Tested Environment
 
@@ -71,6 +75,15 @@ Copy the skill folder into the target agent's skills directory:
 
 ```powershell
 Copy-Item -Recurse .\skills\stk-automation <TARGET_AGENT_SKILLS_DIR>\stk-automation
+```
+
+For CC Switch, either use the repository root, which will find the root-level `stk-automation/` mirror, or configure:
+
+```text
+Owner: Kingdom1223
+Name: stk-automation-agent-toolkit
+Branch: main
+Subdirectory: skills
 ```
 
 Then install the bundled MCP server:
@@ -274,6 +287,8 @@ stk-automation-agent-toolkit/
 │     └─ scripts/
 │        ├─ install_stk_mcp.ps1
 │        └─ stkMCP/
+├─ stk-automation/
+│  └─ SKILL.md
 └─ stkMCP/
    ├─ pyproject.toml
    ├─ README.md
@@ -285,6 +300,8 @@ stk-automation-agent-toolkit/
 
 - `stkMCP/`：独立 MCP 包，可单独安装。
 - `skills/stk-automation/scripts/stkMCP/`：随 skill 一起分发，安装到其他 agent 后也能直接安装 MCP。
+
+根目录下的 `stk-automation/` 是 CC Switch 兼容镜像。有些 skill 管理器会扫描仓库根目录下一级文件夹中的 `SKILL.md`，这个镜像可以让它在不填写子目录时也能识别。
 
 ### 测试环境与要求
 
@@ -312,6 +329,15 @@ stk-automation-agent-toolkit/
 
 ```powershell
 Copy-Item -Recurse .\skills\stk-automation <TARGET_AGENT_SKILLS_DIR>\stk-automation
+```
+
+如果使用 CC Switch，可以直接添加仓库根目录，它会识别根目录的 `stk-automation/` 镜像；也可以手动配置：
+
+```text
+Owner: Kingdom1223
+Name: stk-automation-agent-toolkit
+Branch: main
+Subdirectory: skills
 ```
 
 安装 skill 内置 MCP：

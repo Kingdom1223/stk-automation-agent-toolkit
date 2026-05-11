@@ -1,0 +1,3 @@
+display_name: STK Automation
+short_description: Build STK scenarios, links, external ephemeris, and validated STK data exports.
+default_prompt: Use STK automation to create the requested scenario, export the requested STK Data Provider fields, and validate the output quality.
